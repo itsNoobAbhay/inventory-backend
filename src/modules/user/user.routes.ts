@@ -6,8 +6,8 @@ import verifyAuth from '../../middlewares/verifyAuth';
 
 const userRoutes = Router();
 
-userRoutes.post('/register', validateRequest(userValidator.registerSchema), userControllers.register);
-userRoutes.post('/login', validateRequest(userValidator.loginSchema), userControllers.login);
+userRoutes.post('/register', userControllers.register);
+userRoutes.post('/login', userControllers.login);
 userRoutes.get('/self', verifyAuth, userControllers.getSelf);
 userRoutes.post(
   '/change-password',
